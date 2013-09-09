@@ -88,7 +88,7 @@ module WashOut
     # This action generates the WSDL for defined SOAP methods.
     def _generate_wsdl
       operations_to_be_show = {}
-      if params[:operation]
+      if params[:operation] && self.class.soap_actions[params[:operation]]
         operations_to_be_show[params[:operation]] = self.class.soap_actions[params[:operation]]
       else
         operations_to_be_show = self.class.soap_actions
