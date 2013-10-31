@@ -91,6 +91,7 @@ module WashOut
       if params[:operation] && self.class.soap_actions[params[:operation]]
         operations_to_be_show[params[:operation]] = self.class.soap_actions[params[:operation]]
       elsif params[:device]
+              debugger
         OPERATIONS_BY_DEVICE[params[:device]].each do |operation|
           operations_to_be_show[operation] = self.class.soap_actions[operation]
         end  
