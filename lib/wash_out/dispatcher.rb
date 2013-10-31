@@ -87,12 +87,13 @@ module WashOut
 
     # This action generates the WSDL for defined SOAP methods.
     def _generate_wsdl
-      puts "blablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-      puts ACTIVE_STATUS_DEVICES.inspect
-      puts DeviceRoom.all.inspect
       operations_to_be_show = {}
       if params[:operation] && self.class.soap_actions[params[:operation]]
         operations_to_be_show[params[:operation]] = self.class.soap_actions[params[:operation]]
+      elsif params[:device]
+        OPERATIONS_BY_DEVICE[params[:device]].each do |operation|
+          operations_to_be_show[operation] = self.class.soap_actions[operation]
+        end  
       else
         operations_to_be_show = self.class.soap_actions
       end
