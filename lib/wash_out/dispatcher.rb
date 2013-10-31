@@ -89,6 +89,7 @@ module WashOut
     def _generate_wsdl
       puts "blablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
       puts ACTIVE_STATUS_DEVICES.inspect
+      puts DeviceRoom.all.inspect
       operations_to_be_show = {}
       if params[:operation] && self.class.soap_actions[params[:operation]]
         operations_to_be_show[params[:operation]] = self.class.soap_actions[params[:operation]]
