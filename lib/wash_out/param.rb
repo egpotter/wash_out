@@ -39,7 +39,6 @@ module WashOut
     # Converts a generic externally derived Ruby value, such as String or
     # Hash, to a native Ruby object according to the definition of this type.
     def load(data, key)
-      debugger
       if !data.has_key? key
         raise WashOut::Dispatcher::SOAPError, "Required SOAP parameter '#{key}' is missing"
       end

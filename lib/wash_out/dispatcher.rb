@@ -78,10 +78,9 @@ module WashOut
       params = HashWithIndifferentAccess.new
       spec.each do |param|
         key = param.raw_name.to_sym
-        debugger
-        if xml_data.has_key? key
+        # if xml_data.has_key? key
           params[param.raw_name] = param.load(xml_data, key)
-        end
+        # end
       end
       params
     end
