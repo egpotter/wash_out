@@ -71,7 +71,7 @@ module WashOut
           when 'base64Binary'; lambda{|dat| Base64.decode64(dat)}
           else raise RuntimeError, "Invalid WashOut simple type: #{type}"
         end
-
+        debugger
         begin
           if data.nil?
             data
