@@ -42,7 +42,7 @@ module WashOut
       if !data.has_key? key
         raise WashOut::Dispatcher::SOAPError, "Required SOAP parameter '#{key}' is missing"
       end
-
+      debugger
       data = data[key]
       data = [data] if @multiplied && !data.is_a?(Array)
 
